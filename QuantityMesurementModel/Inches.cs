@@ -6,18 +6,12 @@ namespace QuantityMesurementModel
 {
     public class Inches
     {
-        int inch;
-        public Inches(int _inch)
+        double  inch;
+        public Inches(double  inch)
         {
-            this.inch = _inch;
+            this.inch = inch;
         }
-        public bool ConvertedInchValue(Inches _inch)
-        {
-            if (this.inch.Equals(_inch.inch))
-                return true;
-            return false;
-        }
-        public int getInches()
+        public double GetValue()
         {
             return inch;
         }

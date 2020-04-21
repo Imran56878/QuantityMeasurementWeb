@@ -6,12 +6,12 @@ namespace QuantityMesurementModel
 {
     public class Yard
     {
-        int yard;
-        public Yard(int _yard)
+        double yard;
+        public Yard(double yard)
         {
-            this.yard = _yard;
+            this.yard = yard;
         }
-        public int GetYardValue()
+        public double GetYardValue()
         {
             return this.yard;
         }

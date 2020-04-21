@@ -6,26 +6,16 @@ namespace QuantityMesurementModel
 {
     public class Kilogram
     {
-        int kilogram;
-        public Kilogram(int _kilogram)
+        double  kilogram;
+        public Kilogram(double kilogram)
         {
-            this.kilogram = _kilogram;
+            this.kilogram = kilogram;
         }
-        public int GetKilogramValue()
+        public double GetKilogramValue()
         {
 
             return this.kilogram;
         }
-        /// <summary>
-        /// This method is checking the Kilgram equality
-        /// </summary>
-        /// <param name="kgram"></param>
-        /// <returns></returns>
-        public bool Checking_Equality_Of_Kilo_Grams(Kilogram kgram)
-        {
-            if (this.kilogram == kgram.GetKilogramValue())
-                return true;
-            return false;
-        }
+        
     }
 }

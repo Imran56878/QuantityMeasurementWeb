@@ -7,9 +7,9 @@ namespace QuantityMesurementModel
     public class Fahrenheit
     {
         double fahrenheit;
-        public Fahrenheit(double _fahrenheit)
+        public Fahrenheit(double fahrenheit)
         {
-            this.fahrenheit = _fahrenheit;
+            this.fahrenheit = fahrenheit;
         }
         /// <summary>
         /// it return the fahrenheit value

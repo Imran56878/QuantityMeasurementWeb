@@ -12,7 +12,8 @@ using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Microsoft.OpenApi.Models;
 using QuantityMeasurementRepository;
-using QuantityMeasurementManager;
+using QuntityMeasurementManager;
+
 namespace Quantity_Measurement_WebApi
 {
     public class Startup

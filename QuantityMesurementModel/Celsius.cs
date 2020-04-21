@@ -7,9 +7,9 @@ namespace QuantityMesurementModel
     public class Celsius
     {
         double celsius;
-        public Celsius(double _celsius)
+        public Celsius(double celsius)
         {
-            this.celsius = _celsius;
+            this.celsius = celsius;
         }
         /// <summary>
         /// It return the celsis value

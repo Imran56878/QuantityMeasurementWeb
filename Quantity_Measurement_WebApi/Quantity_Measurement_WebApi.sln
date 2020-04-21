@@ -3,13 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29920.165
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Quantity_Measurement_WebApi", "Quantity_Measurement_WebApi.csproj", "{DC633103-3F4A-4F90-AC4F-2EC1B386824E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "QuantityMesurementModel", "..\QuantityMesurementModel\QuantityMesurementModel.csproj", "{3BA64E3B-3119-4DDC-B028-1B89EA35E627}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuantityMesurementModel", "..\QuantityMesurementModel\QuantityMesurementModel.csproj", "{3BA64E3B-3119-4DDC-B028-1B89EA35E627}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "QuantityMeasurementRepository", "..\QuantityMeasurementRepository\QuantityMeasurementRepository.csproj", "{4805E92C-EBAE-4B72-A014-B5646BC991E4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuantityMeasurementRepository", "..\QuantityMeasurementRepository\QuantityMeasurementRepository.csproj", "{4805E92C-EBAE-4B72-A014-B5646BC991E4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "QuntityMeasurementManager", "..\QuntityMeasurementManager\QuntityMeasurementManager.csproj", "{672ABFE9-97C4-4A66-B3CE-349243B5408F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuntityMeasurementManager", "..\QuntityMeasurementManager\QuntityMeasurementManager.csproj", "{672ABFE9-97C4-4A66-B3CE-349243B5408F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Quantity_Measurement_WebApi", "Quantity_Measurement_WebApi.csproj", "{CC8AA8EC-C946-4C80-9BFD-BF598BD7406C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +17,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{DC633103-3F4A-4F90-AC4F-2EC1B386824E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{DC633103-3F4A-4F90-AC4F-2EC1B386824E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{DC633103-3F4A-4F90-AC4F-2EC1B386824E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{DC633103-3F4A-4F90-AC4F-2EC1B386824E}.Release|Any CPU.Build.0 = Release|Any CPU
 		{3BA64E3B-3119-4DDC-B028-1B89EA35E627}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{3BA64E3B-3119-4DDC-B028-1B89EA35E627}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3BA64E3B-3119-4DDC-B028-1B89EA35E627}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -33,6 +29,10 @@ Global
 		{672ABFE9-97C4-4A66-B3CE-349243B5408F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{672ABFE9-97C4-4A66-B3CE-349243B5408F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{672ABFE9-97C4-4A66-B3CE-349243B5408F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CC8AA8EC-C946-4C80-9BFD-BF598BD7406C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CC8AA8EC-C946-4C80-9BFD-BF598BD7406C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CC8AA8EC-C946-4C80-9BFD-BF598BD7406C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CC8AA8EC-C946-4C80-9BFD-BF598BD7406C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

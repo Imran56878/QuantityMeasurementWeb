@@ -6,12 +6,12 @@ namespace QuantityMesurementModel
 {
     public class Gram
     {
-        int gram;
-        public Gram(int _gram)
+        double  gram;
+        public Gram(double  gram)
         {
-            this.gram = _gram;
+            this.gram = gram;
         }
-        public int GetGramValue()
+        public double GetGramValue()
         {
             return this.gram;
         }

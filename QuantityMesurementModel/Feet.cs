@@ -6,24 +6,13 @@ namespace QuantityMesurementModel
 {
     public class Feet
     {
-        int feet;
-        public Feet(int _feet)
+        double  feet;
+        public Feet(double  feet)
         {
-            this.feet = _feet;
+            this.feet = feet;
         }
-        public override bool Equals(object obj)
-        {
-            if ((obj == null) || !this.GetType().Equals(obj.GetType()))
-                return false;
-            return true;
-        }
-        public bool ConvertedFeetValue(Feet _feet)
-        {
-            if (this.feet.Equals(_feet.feet))
-                return true;
-            return false;
-        }
-        public int GetFeetValue()
+     
+        public double GetValue()
         {
             return this.feet;
         }

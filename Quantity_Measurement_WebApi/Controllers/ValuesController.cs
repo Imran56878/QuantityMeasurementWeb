@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using QuantityMeasurementManager;
-using QuantityMeasurementModel;
+using QuantityMesurementModel;
+using QuntityMeasurementManager;
 
 namespace Quantity_Measurement_WebApi.Controllers
 {
@@ -73,7 +73,7 @@ namespace Quantity_Measurement_WebApi.Controllers
             var gramValue = manager.KilogramToGramConverter(kilogram);
             if (gramValue != null)
             {
-                return this.Ok(gramValue.GetValue());
+                return this.Ok(gramValue.GetGramValue());
             }
             return this.BadRequest();
         }
@@ -84,7 +84,7 @@ namespace Quantity_Measurement_WebApi.Controllers
             var kilogramValue = manager.GramToKilogramConverter(gram);
             if (kilogramValue != null)
             {
-                return this.Ok(kilogramValue.GetValue());
+                return this.Ok(kilogramValue.GetKilogramValue());
             }
             return this.BadRequest();
         }
@@ -95,19 +95,19 @@ namespace Quantity_Measurement_WebApi.Controllers
             var fahrenheitValue = manager.CelsiusToFahrenheitConverter(celsius);
             if (fahrenheitValue != null)
             {
-                return this.Ok(fahrenheitValue.GetValue());
+                return this.Ok(fahrenheitValue.GetFahrenheitValue());
             }
             return this.BadRequest();
         }
 
         [Route("FahrenheitToCelsius")]
         [HttpPost]
-        public ActionResult<double> FahrenheittoCelsiusConverter(Fahranheit fahranheit)
+        public ActionResult<double> FahrenheittoCelsiusConverter(Fahrenheit fahranheit)
         {
             var celsiusValue = manager.FahrenheitToCelsiusCoverter(fahranheit);
             if (celsiusValue != null)
             {
-                return this.Ok(celsiusValue.GetValue());
+                return this.Ok(celsiusValue.GetCelsiusValue());
             }
             return this.BadRequest();
         }

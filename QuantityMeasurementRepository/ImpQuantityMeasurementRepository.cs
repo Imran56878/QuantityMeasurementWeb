@@ -41,7 +41,7 @@ namespace QuantityMeasurementRepository
         /// <returns></returns>
         public Inches FeetToInchConverter(Feet feet)
         {
-            var feetToInchValue = feet.GetFeetValue() * 12;
+            var feetToInchValue = feet.GetValue() * 12;
             Inches inchValue = new Inches(feetToInchValue);
             return inchValue;
         }
@@ -64,7 +64,7 @@ namespace QuantityMeasurementRepository
         /// <returns></returns>
         public Feet InchToFeetConverter(Inches inch)
         {
-            var inchValue = inch.getInches() / 12;
+            var inchValue = inch.GetValue() / 12;
             Feet feet = new Feet(inchValue);
             return feet;
         }
