@@ -4,17 +4,13 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
-using Microsoft.OpenApi.Models;
-using QuantityMeasurementRepository;
-using QuntityMeasurementManager;
 
-namespace Quantity_Measurement_WebApi
+namespace ParkingLot_WebApi
 {
     public class Startup
     {
@@ -29,18 +25,6 @@ namespace Quantity_Measurement_WebApi
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
-            services.AddTransient<IQuantityMeasurementRepository, ImpQuantityMeasurementRepository>();
-            services.AddTransient<IQuantityMeasurementManager, ImpQuantityMeasurementManager>();
-            services.AddSwaggerGen(c =>
-            {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "My API", Version = "v1" });
-            });
-            services.AddCors(opt => {
-                opt.AddPolicy("CorsPolicy", policy => {
-                    policy.AllowAnyHeader().AllowAnyMethod().WithOrigins("http://localhost:3000");
-                });
-            });
-
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -49,16 +33,8 @@ namespace Quantity_Measurement_WebApi
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
-                app.UseSwagger();
-                app.UseSwaggerUI(c => { c.SwaggerEndpoint("/swagger/v1/swagger.json", "myapi v1"); });
+            }
 
-            }
-            else
-            {
-                app.UseHsts();
-            }
-            app.UseCors("CorsPolicy");
-            app.UseHttpsRedirection();
             app.UseMvc();
         }
     }

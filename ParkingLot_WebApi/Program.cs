@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 
-namespace Quantity_Measurement_WebApi
+namespace ParkingLot_WebApi
 {
     public class Program
     {
@@ -19,7 +19,6 @@ namespace Quantity_Measurement_WebApi
 
         public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
             WebHost.CreateDefaultBuilder(args)
-            .UseKestrel()
                 .UseStartup<Startup>();
     }
 }
