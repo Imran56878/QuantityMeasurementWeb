@@ -12,7 +12,7 @@ namespace ParkingLotRepository.Context
         {
 
         }
-        public DbSet<ParkingModel > Parking
+        public DbSet<ParkingModel> Parking
         {
             get;set;
         }

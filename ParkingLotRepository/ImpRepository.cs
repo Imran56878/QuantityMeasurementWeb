@@ -14,7 +14,14 @@ namespace ParkingLotRepository
         {
             this.userDBContext = userDBContext;
         }
-        public Task<int> DeriverTimeIn(ParkingModel parkingModel)
+        public Task<int> DeriverCheckIn(ParkingModel parkingModel)
+        {
+            userDBContext.Parking.Add(parkingModel);
+            var result = userDBContext.SaveChangesAsync();
+            return result;
+        }
+
+        public Task<int> DeriverCheckOut(ParkingModel parkingModel)
         {
             userDBContext.Parking.Add(parkingModel);
             var result = userDBContext.SaveChangesAsync();

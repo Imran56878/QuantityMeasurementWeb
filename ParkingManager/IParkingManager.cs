@@ -8,7 +8,7 @@ namespace ParkingManager
 {
    public interface IParkingManager
     {
-        Task<int> DeriverTimeIn(ParkingModel parkingModel);
+        Task<int> DeriverCheckIn(ParkingModel parkingModel);
         ParkingModel DeriverTimeOut(int parkingSlotNumber);
     }
 }

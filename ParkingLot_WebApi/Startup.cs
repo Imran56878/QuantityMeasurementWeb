@@ -30,7 +30,7 @@ namespace ParkingLot_WebApi
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
-            services.AddDbContextPool<UserDBContext>(Options => Options.UseSqlServer(Configuration.GetConnectionString("UseDBConnection")));
+            services.AddDbContextPool<UserDBContext>(Options => Options.UseSqlServer(Configuration.GetConnectionString("UserDbConnection")));
             services.AddTransient<IParkingManager,ImpParkingManager>();
             services.AddTransient<IRepository,ImpRepository>();
             services.AddSwaggerGen(c =>

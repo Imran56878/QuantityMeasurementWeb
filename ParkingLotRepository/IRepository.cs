@@ -8,7 +8,8 @@ namespace ParkingLotRepository
 {
     public interface IRepository
     {
-        Task<int> DeriverTimeIn(ParkingModel parkingModel);
+        Task<int> DeriverCheckIn(ParkingModel parkingModel);
+        Task<int> DeriverCheckOut(ParkingModel parkingModel);
         ParkingModel DeriverTimeOut(int parkingSlotNumber);
     }
 }
