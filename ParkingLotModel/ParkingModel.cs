@@ -8,16 +8,21 @@ namespace ParkingLotModel
 {
     public class ParkingModel
     {
-        int tokenNumber;
-        string parkingStatus;
-        string carColor;
-        string isDriverHandicap;
+        // int tokenNumber;
+        int parkingSlotNumber;
+        string vehicleType;
+        DateTime timeIn;
+        DateTime timeOut;
         double ratePerHour;
         string vehicleNumber;
-        double customerNumber;
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        [Key]
-        public int TokenNumber
+        string parkingType;
+        // string parkingStatus;
+        // string carColor;
+        //string isDriverHandicap;
+        // double customerNumber;
+        // [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        // [Key]
+        /*public int TokenNumber
         {
             get
             {
@@ -27,39 +32,51 @@ namespace ParkingLotModel
             {
                 this.tokenNumber = value;
             }
-        }
-
-        public string ParkingStatus
+        }*/
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        [Key]
+        public int ParkingSlotNumber
         {
             get
             {
-                return this.isDriverHandicap;
+                return this.parkingSlotNumber;
             }
             set
             {
-                this.isDriverHandicap = value;
+                this.parkingSlotNumber = value;
             }
         }
-        public string CarColor
+        public string VehicleType
         {
             get
             {
-                return this.carColor;
+                return this.vehicleType;
             }
             set
             {
-                this.carColor = value;
+                this.vehicleType = value;
             }
         }
-        public string IsDeriverHandicap
+        public DateTime TimeIn
         {
             get
             {
-                return this.isDriverHandicap;
+                return this.timeIn;
             }
             set
             {
-                this.isDriverHandicap = value;
+                this.timeIn = value;
+            }
+        }
+        public DateTime TimeOut
+        {
+            get
+            {
+                return this.timeOut;
+            }
+            set
+            {
+                this.timeOut = value;
             }
         }
         public double RatePerHour
@@ -84,16 +101,63 @@ namespace ParkingLotModel
                 this.vehicleNumber = value;
             }
         }
-        public double CustomerNumber
+        public string ParkingType
         {
             get
             {
-                return this.customerNumber;
+                return this.parkingType;
             }
             set
             {
-                this.customerNumber = value;
+                this.parkingType = value;
             }
         }
+
+        /* public string CarColor
+         {
+             get
+             {
+                 return this.carColor;
+             }
+             set
+             {
+                 this.carColor = value;
+             }
+         }*/
+        /* public string IsDeriverHandicap
+         {
+             get
+             {
+                 return this.isDriverHandicap;
+             }
+             set
+             {
+                 this.isDriverHandicap = value;
+             }
+         }*/
+        /*        public string ParkingStatus
+              {
+                  get
+                  {
+                      return this.isDriverHandicap;
+                  }
+                  set
+                  {
+                      this.isDriverHandicap = value;
+                  }
+              }*/
+
+        /* public double CustomerNumber
+         {
+             get
+             {
+                 return this.customerNumber;
+             }
+             set
+             {
+                 this.customerNumber = value;
+             }
+         }*/
+
     }
 }

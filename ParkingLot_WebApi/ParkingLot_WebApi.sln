@@ -3,9 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29920.165
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ParkingLot_WebApi", "ParkingLot_WebApi.csproj", "{AE9155A8-2733-4B58-8ABD-D5039AE05525}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ParkingLot_WebApi", "ParkingLot_WebApi.csproj", "{AE9155A8-2733-4B58-8ABD-D5039AE05525}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ParkingLotModel", "..\ParkingLotModel\ParkingLotModel.csproj", "{9B42EC52-F407-498C-AF04-70B753EADA52}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ParkingLotModel", "..\ParkingLotModel\ParkingLotModel.csproj", "{9B42EC52-F407-498C-AF04-70B753EADA52}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ParkingLotRepository", "..\ParkingLotRepository\ParkingLotRepository.csproj", "{E944D841-E500-469C-8EEF-C995B13DFC23}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ParkingManager", "..\ParkingManager\ParkingManager.csproj", "{50E172A6-664F-460F-B4B3-585E31F9F795}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +25,14 @@ Global
 		{9B42EC52-F407-498C-AF04-70B753EADA52}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9B42EC52-F407-498C-AF04-70B753EADA52}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9B42EC52-F407-498C-AF04-70B753EADA52}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E944D841-E500-469C-8EEF-C995B13DFC23}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E944D841-E500-469C-8EEF-C995B13DFC23}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E944D841-E500-469C-8EEF-C995B13DFC23}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E944D841-E500-469C-8EEF-C995B13DFC23}.Release|Any CPU.Build.0 = Release|Any CPU
+		{50E172A6-664F-460F-B4B3-585E31F9F795}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{50E172A6-664F-460F-B4B3-585E31F9F795}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{50E172A6-664F-460F-B4B3-585E31F9F795}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{50E172A6-664F-460F-B4B3-585E31F9F795}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
