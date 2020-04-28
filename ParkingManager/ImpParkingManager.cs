@@ -20,9 +20,14 @@ namespace ParkingManager
             return this.irepo.DeriverCheckIn(parkingModel);
         }
 
-        public ParkingModel DeriverTimeOut(int parkingSlotNumber)
+        public ParkingModel DeleteEntry(int parkingSlotNumber)
         {
-            return this.irepo.DeriverTimeOut(parkingSlotNumber);
+            return this.irepo.DeleteEntry(parkingSlotNumber);
+        }
+
+        public Task<int> DeriverCheckOut(ParkingModel parkingModel)
+        {
+            return this.irepo.DeriverCheckOut(parkingModel);
         }
     }
 }

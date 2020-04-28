@@ -6,9 +6,10 @@ using System.Threading.Tasks;
 
 namespace ParkingManager
 {
-   public interface IParkingManager
+    public interface IParkingManager
     {
         Task<int> DeriverCheckIn(ParkingModel parkingModel);
-        ParkingModel DeriverTimeOut(int parkingSlotNumber);
+        ParkingModel DeleteEntry(int parkingSlotNumber);
+        Task<int> DeriverCheckOut(ParkingModel parkingModel);
     }
 }

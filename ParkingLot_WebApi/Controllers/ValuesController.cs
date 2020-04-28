@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using ParkingLotModel;
+using ParkingManager;
 
 namespace ParkingLot_WebApi.Controllers
 {
@@ -10,36 +12,48 @@ namespace ParkingLot_WebApi.Controllers
     [ApiController]
     public class ValuesController : ControllerBase
     {
-        // GET api/values
-        [HttpGet]
-        public ActionResult<IEnumerable<string>> Get()
+        private readonly IParkingManager manager;
+        public ValuesController(IParkingManager manager)
         {
-            return new string[] { "value1", "value2" };
+            this.manager = manager;
         }
-
-        // GET api/values/5
-        [HttpGet("{id}")]
-        public ActionResult<string> Get(int id)
-        {
-            return "value";
-        }
-
-        // POST api/values
+       
+        [Route("DeriverCheckIn")]
         [HttpPost]
-        public void Post([FromBody] string value)
+        public async Task<IActionResult> DeriverCheckIn(ParkingModel parkingModel)
         {
+            var result = await this.manager.DeriverCheckIn(parkingModel);
+            if (result == 1)
+            {
+                return this.Ok(parkingModel);
+            }
+            else
+            {
+                return this.BadRequest();
+            }
         }
-
-        // PUT api/values/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
-        {
+          [Route("DeriverCheckOut")]
+         [HttpPut]
+         public async Task<IActionResult> DeriverCheckOut(ParkingModel parkingModel)
+         {
+            var result = await this.manager.DeriverCheckOut(parkingModel);
+            if (result == 1)
+            {
+                return this.Ok(parkingModel);
+            }
+            else
+            {
+                return this.BadRequest();
+            }
         }
+         
 
-        // DELETE api/values/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
+        [Route("DeriverCheckOut")]
+        [HttpDelete]
+        public ParkingModel DeleteEntry(int parkingSlotNumber)
         {
+            var result = this.manager.DeleteEntry(parkingSlotNumber);
+            return result;
         }
     }
 }

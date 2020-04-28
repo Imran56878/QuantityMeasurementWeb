@@ -16,19 +16,13 @@ namespace ParkingLotRepository
         }
         public Task<int> DeriverCheckIn(ParkingModel parkingModel)
         {
+            parkingModel.TimeIn = DateTime.Now;
             userDBContext.Parking.Add(parkingModel);
             var result = userDBContext.SaveChangesAsync();
             return result;
         }
 
-        public Task<int> DeriverCheckOut(ParkingModel parkingModel)
-        {
-            userDBContext.Parking.Add(parkingModel);
-            var result = userDBContext.SaveChangesAsync();
-            return result;
-        }
-
-        public ParkingModel DeriverTimeOut(int parkingSlotNumber)
+        public ParkingModel DeleteEntry(int parkingSlotNumber)
         {
             ParkingModel parkingModel = userDBContext.Parking.Find(parkingSlotNumber);
             if (parkingModel != null)
@@ -37,6 +31,15 @@ namespace ParkingLotRepository
                 userDBContext.SaveChanges();
             }
             return parkingModel;
+
+        }
+
+        public Task<int> DeriverCheckOut(ParkingModel parkingModel)
+        {
+            var parking = userDBContext.Parking.Attach(parkingModel);
+            parking.State = Microsoft.EntityFrameworkCore.EntityState.Modified;
+            var result = userDBContext.SaveChangesAsync();
+            return result;
 
         }
     }

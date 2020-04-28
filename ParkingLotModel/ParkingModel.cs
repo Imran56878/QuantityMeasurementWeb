@@ -8,7 +8,6 @@ namespace ParkingLotModel
 {
     public class ParkingModel
     {
-        // int tokenNumber;
         int parkingSlotNumber;
         string vehicleType;
         DateTime timeIn;
@@ -16,23 +15,7 @@ namespace ParkingLotModel
         double ratePerHour;
         string vehicleNumber;
         string parkingType;
-        // string parkingStatus;
-        // string carColor;
-        //string isDriverHandicap;
-        // double customerNumber;
-        // [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        // [Key]
-        /*public int TokenNumber
-        {
-            get
-            {
-                return this.tokenNumber;
-            }
-            set
-            {
-                this.tokenNumber = value;
-            }
-        }*/
+
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [Key]
         public int ParkingSlotNumber
@@ -112,52 +95,5 @@ namespace ParkingLotModel
                 this.parkingType = value;
             }
         }
-
-        /* public string CarColor
-         {
-             get
-             {
-                 return this.carColor;
-             }
-             set
-             {
-                 this.carColor = value;
-             }
-         }*/
-        /* public string IsDeriverHandicap
-         {
-             get
-             {
-                 return this.isDriverHandicap;
-             }
-             set
-             {
-                 this.isDriverHandicap = value;
-             }
-         }*/
-        /*        public string ParkingStatus
-              {
-                  get
-                  {
-                      return this.isDriverHandicap;
-                  }
-                  set
-                  {
-                      this.isDriverHandicap = value;
-                  }
-              }*/
-
-        /* public double CustomerNumber
-         {
-             get
-             {
-                 return this.customerNumber;
-             }
-             set
-             {
-                 this.customerNumber = value;
-             }
-         }*/
-
     }
 }
