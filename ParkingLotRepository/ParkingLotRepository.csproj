@@ -21,4 +21,9 @@
     <ProjectReference Include="..\ParkingLotModel\ParkingLotModel.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Security\" />
+    <Folder Include="Police\" />
+  </ItemGroup>
+
 </Project>

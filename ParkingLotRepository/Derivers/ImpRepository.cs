@@ -9,6 +9,7 @@ namespace ParkingLotRepository
 {
     public class ImpRepository : IRepository
     {
+        double charges = 0;
         private readonly UserDBContext userDBContext;
         public ImpRepository(UserDBContext userDBContext)
         {
@@ -42,6 +43,21 @@ namespace ParkingLotRepository
             var result = userDBContext.SaveChangesAsync();
             return result;
 
+        }
+        public double ParkingCharges(int slotNumber)
+        {
+
+            var vehicle = userDBContext.Parking.Find(slotNumber);
+            var checkIn = vehicle.TimeIn;
+            var checkOut = vehicle.TimeOut;
+            if (vehicle.ParkingType == "wallet")
+            {
+
+                double hours = (checkIn - checkOut).TotalHours;
+                charges = (Math.Ceiling(hours)) * (vehicle.RatePerHour);
+            }
+
+            return charges;
         }
     }
 }

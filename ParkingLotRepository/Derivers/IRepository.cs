@@ -25,5 +25,11 @@ namespace ParkingLotRepository
         /// <param name="parkingSlotNumber"></param>
         /// <returns></returns>
         ParkingModel DeleteEntry(int parkingSlotNumber);
+          /// <summary>
+          /// It calculate the fair for parking(walletType)
+          /// </summary>
+          /// <param name="slotNumber"></param>
+          /// <returns></returns>
+        double ParkingCharges(int slotNumber);
     }
 }

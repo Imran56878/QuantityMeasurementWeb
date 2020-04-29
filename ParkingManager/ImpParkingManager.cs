@@ -29,5 +29,20 @@ namespace ParkingManager
         {
             return this.irepo.DeriverCheckOut(parkingModel);
         }
+
+        public IEnumerable<ParkingModel> GetAllParkingDetails()
+        {
+            throw new NotImplementedException();
+        }
+
+        public ParkingModel GetParkingDetail(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public double ParkingCharges(int slotNumber)
+        {
+            return this.irepo.ParkingCharges(slotNumber);
+        }
     }
 }

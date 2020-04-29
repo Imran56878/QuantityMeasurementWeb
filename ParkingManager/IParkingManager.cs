@@ -11,5 +11,8 @@ namespace ParkingManager
         Task<int> DeriverCheckIn(ParkingModel parkingModel);
         ParkingModel DeleteEntry(int parkingSlotNumber);
         Task<int> DeriverCheckOut(ParkingModel parkingModel);
+        IEnumerable<ParkingModel> GetAllParkingDetails();
+        ParkingModel GetParkingDetail(int id);
+        double ParkingCharges(int slotNumber);
     }
 }

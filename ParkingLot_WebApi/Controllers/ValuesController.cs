@@ -17,7 +17,7 @@ namespace ParkingLot_WebApi.Controllers
         {
             this.manager = manager;
         }
-       
+
         [Route("DeriverCheckIn")]
         [HttpPost]
         public async Task<IActionResult> DeriverCheckIn(ParkingModel parkingModel)
@@ -32,10 +32,10 @@ namespace ParkingLot_WebApi.Controllers
                 return this.BadRequest();
             }
         }
-          [Route("DeriverCheckOut")]
-         [HttpPut]
-         public async Task<IActionResult> DeriverCheckOut(ParkingModel parkingModel)
-         {
+        [Route("DeriverCheckOut")]
+        [HttpPut]
+        public async Task<IActionResult> DeriverCheckOut(ParkingModel parkingModel)
+        {
             var result = await this.manager.DeriverCheckOut(parkingModel);
             if (result == 1)
             {
@@ -46,7 +46,7 @@ namespace ParkingLot_WebApi.Controllers
                 return this.BadRequest();
             }
         }
-         
+
 
         [Route("DeriverCheckOut")]
         [HttpDelete]
@@ -54,6 +54,20 @@ namespace ParkingLot_WebApi.Controllers
         {
             var result = this.manager.DeleteEntry(parkingSlotNumber);
             return result;
+        }
+        [Route("ParkingCharges")]
+        [HttpGet]
+        public  async Task<IActionResult> ParkingCharges(int parkingSlotNumber)
+        {
+            var result =  this.manager.ParkingCharges(parkingSlotNumber);
+            if (result == 1)
+            {
+                return this.Ok(parkingSlotNumber);
+            }
+            else
+            {
+                return this.BadRequest();
+            }
         }
     }
 }
