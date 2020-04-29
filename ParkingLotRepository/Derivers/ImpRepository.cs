@@ -17,6 +17,7 @@ namespace ParkingLotRepository
         public Task<int> DeriverCheckIn(ParkingModel parkingModel)
         {
             parkingModel.TimeIn = DateTime.Now;
+            parkingModel.TimeOut = DateTime.MinValue;
             userDBContext.Parking.Add(parkingModel);
             var result = userDBContext.SaveChangesAsync();
             return result;
