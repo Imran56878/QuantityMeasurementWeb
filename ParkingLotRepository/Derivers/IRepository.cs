@@ -12,24 +12,28 @@ namespace ParkingLotRepository
     /// </summary>
     /// <param name="parkingModel"></param>
     /// <returns></returns>
-        Task<int> DeriverCheckIn(ParkingModel parkingModel);
+        Task<int> ParkingVehicle(ParkingModel parkingModel);
         /// <summary>
         /// updating record
         /// </summary>
         /// <param name="parkingModel"></param>
         /// <returns></returns>
-        Task<int> DeriverCheckOut(ParkingModel parkingModel);
+        Task<int> UpdateParkingDetails(ParkingModel parkingModel);
         /// <summary>
         /// Deleting record
         /// </summary>
         /// <param name="parkingSlotNumber"></param>
         /// <returns></returns>
-        ParkingModel DeleteEntry(int parkingSlotNumber);
+        ParkingModel UnparkingVehicle(int parkingSlotNumber);
           /// <summary>
           /// It calculate the fair for parking(walletType)
           /// </summary>
           /// <param name="slotNumber"></param>
           /// <returns></returns>
         double ParkingCharges(int slotNumber);
+       // Dictionary<string, List<ParkingModel>> GetAllParkingDetails();
+
+        ParkingModel GetParkingDetail(int id);
+        IEnumerable<ParkingModel> GetAllParkingDetails();
     }
 }

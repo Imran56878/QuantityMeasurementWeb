@@ -2,6 +2,7 @@
 using ParkingLotRepository.Context;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -15,7 +16,7 @@ namespace ParkingLotRepository
         {
             this.userDBContext = userDBContext;
         }
-        public Task<int> DeriverCheckIn(ParkingModel parkingModel)
+        public Task<int> ParkingVehicle(ParkingModel parkingModel)
         {
             parkingModel.TimeIn = DateTime.Now;
             parkingModel.TimeOut = DateTime.MinValue;
@@ -24,7 +25,7 @@ namespace ParkingLotRepository
             return result;
         }
 
-        public ParkingModel DeleteEntry(int parkingSlotNumber)
+        public ParkingModel UnparkingVehicle(int parkingSlotNumber)
         {
             ParkingModel parkingModel = userDBContext.Parking.Find(parkingSlotNumber);
             if (parkingModel != null)
@@ -36,7 +37,7 @@ namespace ParkingLotRepository
 
         }
 
-        public Task<int> DeriverCheckOut(ParkingModel parkingModel)
+        public Task<int> UpdateParkingDetails(ParkingModel parkingModel)
         {
             var parking = userDBContext.Parking.Attach(parkingModel);
             parking.State = Microsoft.EntityFrameworkCore.EntityState.Modified;
@@ -49,7 +50,7 @@ namespace ParkingLotRepository
 
             var vehicle = userDBContext.Parking.Find(slotNumber);
             var checkIn = vehicle.TimeIn;
-            var checkOut = vehicle.TimeOut;
+            var checkOut = DateTime.Now;
             if (vehicle.ParkingType == "wallet")
             {
 
@@ -58,6 +59,39 @@ namespace ParkingLotRepository
             }
 
             return charges;
+        }
+
+       /* public Dictionary<string, List<ParkingModel>> GetAllParkingDetails()
+        {
+            var walletType = new List<ParkingModel>();
+            var ownerType = new List<ParkingModel>();
+            var dictionary = new Dictionary<string, List<ParkingModel>>();
+            var parkingDetail = userDBContext.Parking;
+            var count = parkingDetail.Count();
+            for (var i = 1; i <= count; i++)
+            {
+                ParkingModel parkingModel = userDBContext.Parking.Find(i);
+
+                if (parkingModel.ParkingType == "wallet")
+                {
+                    walletType.Add(parkingModel);
+                }
+                else ownerType.Add(parkingModel);
+            }
+            dictionary.Add("wallet", walletType);
+            dictionary.Add("owner", ownerType);
+            return dictionary;
+        }*/
+
+        public ParkingModel GetParkingDetail(int slotNumber)
+        {
+            return userDBContext.Parking.Find(slotNumber);
+        }
+
+        public IEnumerable<ParkingModel> GetAllParkingDetails()
+        {
+            return userDBContext.Parking;
+         
         }
     }
 }
