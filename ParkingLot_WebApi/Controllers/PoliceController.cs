@@ -39,13 +39,6 @@ namespace ParkingLot_WebApi.Controllers
             var result = this.imanager.PoliceUnparking(parkingSlotNumber);
             return result;
         }
-         
-        [Route("LastSlotNumber")]
-        [HttpGet]
-        public int LastSlotNumber()
-        {
-            return this.imanager.LastSlotNumber();
-        }
 
         [Route("GetPoliceParkingDetail")]
         [HttpGet]

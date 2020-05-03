@@ -33,13 +33,6 @@ namespace ParkingLotRepository.Police
             return list;
         }
 
-        public int LastSlotNumber()
-        {
-            var a = userDBContext.Parking;
-            var s = a.OrderByDescending(p => p.ParkingSlotNumber).FirstOrDefault().ParkingSlotNumber;
-            return s;
-        }
-
         public Task<int> PoliceParking(ParkingModel parkingModel)
         {
             parkingModel.TimeIn = DateTime.Now;
@@ -51,7 +44,7 @@ namespace ParkingLotRepository.Police
                 
                 if (userDBContext.Parking.Find(slotNumber) == null)
                 {
-                    var result = userDBContext.Parking.Add(parkingModel);
+                    CheckParkingType(parkingModel, slotNumber);
 
                     break;
                 }
@@ -63,6 +56,21 @@ namespace ParkingLotRepository.Police
 
             }
             return userDBContext.SaveChangesAsync();
+        }
+        public void CheckParkingType(ParkingModel parkingModel, int slotNumber)
+        {
+            if ((slotNumber > 0) && (slotNumber <= 75))
+            {
+                parkingModel.ParkingType = "wallet";
+                var result = userDBContext.Parking.Add(parkingModel);
+
+            }
+            else
+            {
+                var result = userDBContext.Parking.Add(parkingModel);
+
+            }
+
         }
         public ParkingModel PoliceUnparking(int parkingSlotNumber)
         {

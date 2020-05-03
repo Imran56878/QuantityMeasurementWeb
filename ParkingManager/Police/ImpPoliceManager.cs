@@ -20,11 +20,6 @@ namespace ParkingManager.Police
             return this.irepo.GetPoliceParkingDetail();
         }
 
-        public int LastSlotNumber()
-        {
-            return this.irepo.LastSlotNumber();
-        }
-
         public Task<int> PoliceParking(ParkingModel parkingModel)
         {
             return this.irepo.PoliceParking(parkingModel);

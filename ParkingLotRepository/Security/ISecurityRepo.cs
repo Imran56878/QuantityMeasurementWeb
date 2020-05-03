@@ -9,6 +9,7 @@ namespace ParkingLotRepository.Security
    public interface ISecurityRepo
     {
         Task<int> SecurityParking(ParkingModel parkingModel);
+        IEnumerable<ParkingModel> GetSecurityParkingDetail();
         string ParkingStatus();
     }
 }

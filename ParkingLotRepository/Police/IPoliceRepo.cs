@@ -10,7 +10,6 @@ namespace ParkingLotRepository.Police
     {
         Task<int> PoliceParking(ParkingModel parkingModel);
         ParkingModel PoliceUnparking(int parkingSlotNumber);
-        int LastSlotNumber();
        IEnumerable<ParkingModel>  GetPoliceParkingDetail();
     }
 }

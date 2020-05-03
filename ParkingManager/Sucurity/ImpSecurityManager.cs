@@ -14,6 +14,12 @@ namespace ParkingManager.Sucurity
         {
             this.irepo = irepo;
         }
+
+        public IEnumerable<ParkingModel> GetSecurityParkingDetail()
+        {
+            return this.irepo.GetSecurityParkingDetail();
+        }
+
         public string ParkingStatus()
         {
             return this.irepo.ParkingStatus();

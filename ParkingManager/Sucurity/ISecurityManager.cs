@@ -9,6 +9,7 @@ namespace ParkingManager.Sucurity
    public interface ISecurityManager
     {
         Task<int> SecurityParking(ParkingModel parkingModel);
+        IEnumerable<ParkingModel> GetSecurityParkingDetail();
         string ParkingStatus();
     }
 }

@@ -27,7 +27,7 @@ namespace ParkingLotRepository
 
                 if (userDBContext.Parking.Find(slotNumber) == null)
                 {
-                    var result = userDBContext.Parking.Add(parkingModel);
+                    CheckParkingType(parkingModel, slotNumber);
 
                     break;
                 }
@@ -39,6 +39,22 @@ namespace ParkingLotRepository
 
             }
             return userDBContext.SaveChangesAsync();
+
+        }
+
+        public void CheckParkingType(ParkingModel parkingModel, int slotNumber)
+        {
+            if ((slotNumber > 0) && (slotNumber <= 75))
+            {
+                parkingModel.ParkingType = "wallet";
+                var result = userDBContext.Parking.Add(parkingModel);
+
+            }
+            else
+            {
+                var result = userDBContext.Parking.Add(parkingModel);
+
+            }
 
         }
 

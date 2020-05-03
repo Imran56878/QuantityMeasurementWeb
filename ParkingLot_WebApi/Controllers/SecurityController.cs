@@ -41,5 +41,12 @@ namespace ParkingLot_WebApi.Controllers
         {
             return this.imanager.ParkingStatus();
         }
+        [Route("GetSecurityParkingDetail")]
+        [HttpGet]
+
+        public IEnumerable<ParkingModel> GetSecurityParkingDetail()
+        {
+            return this.imanager.GetSecurityParkingDetail();
+        }
     }
 }
