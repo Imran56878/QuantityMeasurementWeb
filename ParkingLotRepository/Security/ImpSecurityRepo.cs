@@ -19,14 +19,14 @@ namespace ParkingLotRepository.Security
         public string ParkingStatus()
         {
             var totalRecord = userDBContext.Parking.Count();
-            var a = userDBContext.Parking;
-            var s = a.OrderByDescending(p => p.ParkingSlotNumber).FirstOrDefault().ParkingSlotNumber;
-            if (totalRecord == s)
+            var parkingDetails = userDBContext.Parking;
+            var lastSlot = parkingDetails.OrderByDescending(p => p.ParkingSlotNumber).FirstOrDefault().ParkingSlotNumber;
+            if (totalRecord == lastSlot)
                 return "Status: Slot is Full";
             return "Status: Slot is not Full";
         }
 
-        public Task<int> PoliceParking(ParkingModel parkingModel)
+        public Task<int> SecurityParking(ParkingModel parkingModel)
         {
             parkingModel.TimeIn = DateTime.Now;
             parkingModel.TimeOut = DateTime.MinValue;

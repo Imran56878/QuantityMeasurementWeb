@@ -4,9 +4,9 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ParkingLotRepository.Security
+namespace ParkingManager.Sucurity
 {
-   public interface ISecurityRepo
+   public interface ISecurityManager
     {
         Task<int> SecurityParking(ParkingModel parkingModel);
         string ParkingStatus();
