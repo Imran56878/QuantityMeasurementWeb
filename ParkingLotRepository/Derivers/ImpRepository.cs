@@ -20,16 +20,25 @@ namespace ParkingLotRepository
         {
             parkingModel.TimeIn = DateTime.Now;
             parkingModel.TimeOut = DateTime.MinValue;
-            userDBContext.Parking.Add(parkingModel);
-            var result = userDBContext.SaveChangesAsync();
-            return result;
-           /* if (parkingModel.ParkingSlotNumber <= 14)
+            var count = userDBContext.Parking.Count();
+            var slotNumber = parkingModel.ParkingSlotNumber;
+            for (int i = 1; i <= count + 2; i++)
             {
-                userDBContext.Parking.Add(parkingModel);
-                return userDBContext.SaveChangesAsync();
+
+                if (userDBContext.Parking.Find(slotNumber) == null)
+                {
+                    var result = userDBContext.Parking.Add(parkingModel);
+
+                    break;
+                }
+                else
+                {
+                    slotNumber = i;
+                    parkingModel.ParkingSlotNumber = slotNumber;
+                }
+
             }
-            else throw new NotImplementedException("Wallet Parking is full ");
-*/
+            return userDBContext.SaveChangesAsync();
 
         }
 
@@ -68,28 +77,6 @@ namespace ParkingLotRepository
 
             return charges;
         }
-
-        /* public Dictionary<string, List<ParkingModel>> GetAllParkingDetails()
-         {
-             var walletType = new List<ParkingModel>();
-             var ownerType = new List<ParkingModel>();
-             var dictionary = new Dictionary<string, List<ParkingModel>>();
-             var parkingDetail = userDBContext.Parking;
-             var count = parkingDetail.Count();
-             for (var i = 1; i <= count; i++)
-             {
-                 ParkingModel parkingModel = userDBContext.Parking.Find(i);
-
-                 if (parkingModel.ParkingType == "wallet")
-                 {
-                     walletType.Add(parkingModel);
-                 }
-                 else ownerType.Add(parkingModel);
-             }
-             dictionary.Add("wallet", walletType);
-             dictionary.Add("owner", ownerType);
-             return dictionary;
-         }*/
 
         public ParkingModel GetParkingDetail(int slotNumber)
         {
