@@ -16,7 +16,7 @@ namespace ParkingLotModel
         string vehicleNumber;
         string parkingType;
 
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         [Key]
         public int ParkingSlotNumber
         {

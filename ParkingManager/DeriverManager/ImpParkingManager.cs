@@ -17,7 +17,15 @@ namespace ParkingManager
         }
         public Task<int> ParkingVehicle(ParkingModel parkingModel)
         {
-            return this.irepo.ParkingVehicle(parkingModel);
+            try
+            {
+             return  this.irepo.ParkingVehicle(parkingModel);
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
+            }
+            
         }
 
         public ParkingModel UnparkingVehicle(int parkingSlotNumber)

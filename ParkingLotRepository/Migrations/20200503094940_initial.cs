@@ -1,5 +1,4 @@
 ﻿using System;
-using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace ParkingLotRepository.Migrations
@@ -12,8 +11,7 @@ namespace ParkingLotRepository.Migrations
                 name: "Parking",
                 columns: table => new
                 {
-                    ParkingSlotNumber = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    ParkingSlotNumber = table.Column<int>(nullable: false),
                     VehicleType = table.Column<string>(nullable: true),
                     TimeIn = table.Column<DateTime>(nullable: false),
                     TimeOut = table.Column<DateTime>(nullable: false),

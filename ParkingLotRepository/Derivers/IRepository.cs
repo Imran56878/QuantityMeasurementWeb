@@ -33,7 +33,7 @@ namespace ParkingLotRepository
         double ParkingCharges(int slotNumber);
        // Dictionary<string, List<ParkingModel>> GetAllParkingDetails();
 
-        ParkingModel GetParkingDetail(int id);
+        ParkingModel GetParkingDetail(int slotNumber);
         IEnumerable<ParkingModel> GetAllParkingDetails();
     }
 }

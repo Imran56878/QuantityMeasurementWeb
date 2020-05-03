@@ -10,10 +10,10 @@ namespace ParkingLot_WebApi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class ValuesController : ControllerBase
+    public class DeriverController : ControllerBase
     {
         private readonly IParkingManager manager;
-        public ValuesController(IParkingManager manager)
+        public DeriverController(IParkingManager manager)
         {
             this.manager = manager;
         }
@@ -29,7 +29,7 @@ namespace ParkingLot_WebApi.Controllers
             }
             else
             {
-                return this.BadRequest();
+                return this.BadRequest("Wrong Detail");
             }
         }
         [Route("UpdateParkingDetails")]
@@ -43,7 +43,7 @@ namespace ParkingLot_WebApi.Controllers
             }
             else
             {
-                return this.BadRequest();
+                return this.BadRequest( );
             }
         }
 

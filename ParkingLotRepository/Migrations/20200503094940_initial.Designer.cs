@@ -10,7 +10,7 @@ using ParkingLotRepository.Context;
 namespace ParkingLotRepository.Migrations
 {
     [DbContext(typeof(UserDBContext))]
-    [Migration("20200428131158_initial")]
+    [Migration("20200503094940_initial")]
     partial class initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -23,9 +23,7 @@ namespace ParkingLotRepository.Migrations
 
             modelBuilder.Entity("ParkingLotModel.ParkingModel", b =>
                 {
-                    b.Property<int>("ParkingSlotNumber")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                    b.Property<int>("ParkingSlotNumber");
 
                     b.Property<string>("ParkingType");
 

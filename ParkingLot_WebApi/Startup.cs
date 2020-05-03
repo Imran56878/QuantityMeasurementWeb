@@ -13,7 +13,9 @@ using Microsoft.Extensions.Options;
 using Microsoft.OpenApi.Models;
 using ParkingLotRepository;
 using ParkingLotRepository.Context;
+using ParkingLotRepository.Police;
 using ParkingManager;
+using ParkingManager.Police;
 
 namespace ParkingLot_WebApi
 {
@@ -32,7 +34,9 @@ namespace ParkingLot_WebApi
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
             services.AddDbContextPool<UserDBContext>(Options => Options.UseSqlServer(Configuration.GetConnectionString("UserDbConnection")));
             services.AddTransient<IParkingManager,ImpParkingManager>();
+            services.AddTransient<IPoliceManager, ImpPoliceManager>();
             services.AddTransient<IRepository,ImpRepository>();
+            services.AddTransient<IPoliceRepo, ImpPoliceRepo>();
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "My API", Version = "v1" });

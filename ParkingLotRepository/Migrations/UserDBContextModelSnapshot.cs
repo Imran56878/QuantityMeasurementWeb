@@ -21,9 +21,7 @@ namespace ParkingLotRepository.Migrations
 
             modelBuilder.Entity("ParkingLotModel.ParkingModel", b =>
                 {
-                    b.Property<int>("ParkingSlotNumber")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                    b.Property<int>("ParkingSlotNumber");
 
                     b.Property<string>("ParkingType");
 

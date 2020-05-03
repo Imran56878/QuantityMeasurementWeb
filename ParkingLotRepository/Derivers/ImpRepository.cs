@@ -23,6 +23,14 @@ namespace ParkingLotRepository
             userDBContext.Parking.Add(parkingModel);
             var result = userDBContext.SaveChangesAsync();
             return result;
+           /* if (parkingModel.ParkingSlotNumber <= 14)
+            {
+                userDBContext.Parking.Add(parkingModel);
+                return userDBContext.SaveChangesAsync();
+            }
+            else throw new NotImplementedException("Wallet Parking is full ");
+*/
+
         }
 
         public ParkingModel UnparkingVehicle(int parkingSlotNumber)
@@ -61,27 +69,27 @@ namespace ParkingLotRepository
             return charges;
         }
 
-       /* public Dictionary<string, List<ParkingModel>> GetAllParkingDetails()
-        {
-            var walletType = new List<ParkingModel>();
-            var ownerType = new List<ParkingModel>();
-            var dictionary = new Dictionary<string, List<ParkingModel>>();
-            var parkingDetail = userDBContext.Parking;
-            var count = parkingDetail.Count();
-            for (var i = 1; i <= count; i++)
-            {
-                ParkingModel parkingModel = userDBContext.Parking.Find(i);
+        /* public Dictionary<string, List<ParkingModel>> GetAllParkingDetails()
+         {
+             var walletType = new List<ParkingModel>();
+             var ownerType = new List<ParkingModel>();
+             var dictionary = new Dictionary<string, List<ParkingModel>>();
+             var parkingDetail = userDBContext.Parking;
+             var count = parkingDetail.Count();
+             for (var i = 1; i <= count; i++)
+             {
+                 ParkingModel parkingModel = userDBContext.Parking.Find(i);
 
-                if (parkingModel.ParkingType == "wallet")
-                {
-                    walletType.Add(parkingModel);
-                }
-                else ownerType.Add(parkingModel);
-            }
-            dictionary.Add("wallet", walletType);
-            dictionary.Add("owner", ownerType);
-            return dictionary;
-        }*/
+                 if (parkingModel.ParkingType == "wallet")
+                 {
+                     walletType.Add(parkingModel);
+                 }
+                 else ownerType.Add(parkingModel);
+             }
+             dictionary.Add("wallet", walletType);
+             dictionary.Add("owner", ownerType);
+             return dictionary;
+         }*/
 
         public ParkingModel GetParkingDetail(int slotNumber)
         {
@@ -91,7 +99,7 @@ namespace ParkingLotRepository
         public IEnumerable<ParkingModel> GetAllParkingDetails()
         {
             return userDBContext.Parking;
-         
+
         }
     }
 }
