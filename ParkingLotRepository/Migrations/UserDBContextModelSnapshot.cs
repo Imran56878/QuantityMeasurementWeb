@@ -23,6 +23,8 @@ namespace ParkingLotRepository.Migrations
                 {
                     b.Property<int>("ParkingSlotNumber");
 
+                    b.Property<string>("DeriverType");
+
                     b.Property<string>("ParkingType");
 
                     b.Property<double>("RatePerHour");
@@ -30,6 +32,10 @@ namespace ParkingLotRepository.Migrations
                     b.Property<DateTime>("TimeIn");
 
                     b.Property<DateTime>("TimeOut");
+
+                    b.Property<string>("VehicleColor");
+
+                    b.Property<string>("VehicleModel");
 
                     b.Property<string>("VehicleNumber");
 

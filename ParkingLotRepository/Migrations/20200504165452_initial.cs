@@ -17,7 +17,10 @@ namespace ParkingLotRepository.Migrations
                     TimeOut = table.Column<DateTime>(nullable: false),
                     RatePerHour = table.Column<double>(nullable: false),
                     VehicleNumber = table.Column<string>(nullable: true),
-                    ParkingType = table.Column<string>(nullable: true)
+                    ParkingType = table.Column<string>(nullable: true),
+                    DeriverType = table.Column<string>(nullable: true),
+                    VehicleColor = table.Column<string>(nullable: true),
+                    VehicleModel = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {

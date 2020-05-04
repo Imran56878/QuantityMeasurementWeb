@@ -10,7 +10,7 @@ using ParkingLotRepository.Context;
 namespace ParkingLotRepository.Migrations
 {
     [DbContext(typeof(UserDBContext))]
-    [Migration("20200503094940_initial")]
+    [Migration("20200504165452_initial")]
     partial class initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -25,6 +25,8 @@ namespace ParkingLotRepository.Migrations
                 {
                     b.Property<int>("ParkingSlotNumber");
 
+                    b.Property<string>("DeriverType");
+
                     b.Property<string>("ParkingType");
 
                     b.Property<double>("RatePerHour");
@@ -32,6 +34,10 @@ namespace ParkingLotRepository.Migrations
                     b.Property<DateTime>("TimeIn");
 
                     b.Property<DateTime>("TimeOut");
+
+                    b.Property<string>("VehicleColor");
+
+                    b.Property<string>("VehicleModel");
 
                     b.Property<string>("VehicleNumber");
 

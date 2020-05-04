@@ -24,7 +24,7 @@ namespace ParkingLotRepository.Police
             for (int i = 1; i <= count; i++)
             {
                 ParkingModel parkingModel = userDBContext.Parking.Find(i);
-                if ((parkingModel != null) && parkingModel.ParkingType != "wallet")
+                if ((parkingModel != null) && parkingModel.DeriverType == "Police")
                 {
                     list.Add(userDBContext.Parking.Find(i));
                 }
@@ -61,7 +61,7 @@ namespace ParkingLotRepository.Police
         {
             if ((slotNumber > 0) && (slotNumber <= 75))
             {
-                parkingModel.ParkingType = "wallet";
+                parkingModel.DeriverType = "Police";
                 var result = userDBContext.Parking.Add(parkingModel);
 
             }

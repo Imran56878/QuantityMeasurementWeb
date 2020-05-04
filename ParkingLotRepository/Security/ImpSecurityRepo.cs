@@ -54,7 +54,7 @@ namespace ParkingLotRepository.Security
         {
             if ((slotNumber > 75) && (slotNumber <= 100) )
             {
-                parkingModel.ParkingType = "owner";
+                parkingModel.DeriverType = "Security";
                 var result = userDBContext.Parking.Add(parkingModel);
                 
             }
@@ -74,7 +74,7 @@ namespace ParkingLotRepository.Security
             for (int i = 1; i <= count; i++)
             {
                 ParkingModel parkingModel = userDBContext.Parking.Find(i);
-                if ((parkingModel != null) && parkingModel.ParkingType != "owner")
+                if ((parkingModel != null) && parkingModel.DeriverType == "Security")
                 {
                     list.Add(userDBContext.Parking.Find(i));
                 }

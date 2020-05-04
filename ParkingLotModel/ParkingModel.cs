@@ -15,6 +15,9 @@ namespace ParkingLotModel
         double ratePerHour;
         string vehicleNumber;
         string parkingType;
+        string driverType;
+        string vehicleColor;
+        string vehicleModel;
 
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         [Key]
@@ -93,6 +96,40 @@ namespace ParkingLotModel
             set
             {
                 this.parkingType = value;
+            }
+        }
+        public string DeriverType
+        {
+            get
+            {
+                return this.driverType;
+            }
+            set
+            {
+                this.driverType = value;
+            }
+        }
+        public string VehicleColor
+        {
+            get
+            {
+                return this.vehicleColor;
+            }
+            set
+            {
+                this.vehicleColor = value;
+            }
+
+        }
+        public string VehicleModel
+        {
+            get
+            {
+                return this.vehicleModel;
+            }
+            set
+            {
+                this.vehicleModel = value;
             }
         }
     }

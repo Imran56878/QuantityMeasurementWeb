@@ -46,7 +46,7 @@ namespace ParkingLotRepository
         {
             if ((slotNumber > 0) && (slotNumber <= 75))
             {
-                parkingModel.ParkingType = "wallet";
+                parkingModel.DeriverType = "Deriver";
                 var result = userDBContext.Parking.Add(parkingModel);
 
             }
